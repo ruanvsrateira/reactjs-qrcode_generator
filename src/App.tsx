@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Button } from './components/Button';
+import { Input } from './components/Input';
+import { Title } from './components/Title';
+import { QRCodeContainer } from './styled.app';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App: React.FC = () => {
+  const [link, setLink] = useState<string>('')
+
+  function handleClickGenerateQRCode(){
+    const img = document.querySelector('img') as HTMLImageElement
+  
+    img.src = `https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl=${link}`
+  }
+
+  return(
+    <div>
+      <Title text='Projeto Gerador de QRCode' />
+      <Input value={link} onChange={(e) => {setLink(e.target.value)}} placeholder="Insira seu link aqui ..." />
+      <Button onClick={handleClickGenerateQRCode} />
+      
+      <QRCodeContainer>
+        <img src="" />
+      </QRCodeContainer>
     </div>
   );
-}
+};
 
 export default App;
