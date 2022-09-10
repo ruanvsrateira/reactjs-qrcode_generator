@@ -1,7 +1,10 @@
 import React from "react";
 import { Container } from './styled'
-import { InputProps } from '../../interfaces/InputInterface';
 
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    value: string;
+    placeholder: string;
+};
 
 export const Input = ({placeholder, value, ...props}: InputProps) => {
     return(

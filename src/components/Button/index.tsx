@@ -1,6 +1,9 @@
 import React from 'react';
-import { ButtonProps } from '../../interfaces/ButtonInterface';
 import { Container, Text } from './styled';
+
+interface ButtonProps {
+    onClick: () => void   
+};
 
 export const Button = (props: ButtonProps) => {
     return(

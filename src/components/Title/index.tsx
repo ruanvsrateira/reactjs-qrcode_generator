@@ -1,7 +1,9 @@
 import React from "react";
 import { Text } from './styled';
-import { TitleProps } from '../../interfaces/TitleInterface';
 
+interface TitleProps {
+    text: string,
+};
 
 export const Title = (props: TitleProps) => {
     return(

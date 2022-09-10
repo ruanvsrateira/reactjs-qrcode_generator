@@ -9,6 +9,10 @@ export const Container = styled.button`
     height: 35px;
     cursor: pointer;
     border-radius: 5px;
+
+    :hover {
+        opacity: 90%
+    }
 `;
 
 export const Text = styled.div`
